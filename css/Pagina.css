@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+    
+}
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+header {
+  margin-top: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+
+a{
+  text-decoration: none;
+}
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  margin-left: 30px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 12px;
+  border-radius: 100px;
+  font-weight: 600;
+  color: black;
+  box-shadow: 0 0 0 2px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: black;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #c5e5e4;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: black;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: black;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #c5e5e4;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+.difuminado{
+  padding:20px;
+  background-image: linear-gradient(180deg,#ffffff 0%,#e8eefc 100%);
+}
+
+.mi-contenido {
+  opacity: 0; /* Inicialmente oculto */
+  animation: aparecer 2s forwards; /* Animación de aparición */
+}
+
+@keyframes aparecer {
+  from {transform: translateX(100%); opacity: 0;}
+  to {transform: translateX(0); opacity: 1;}
+}
+
+
+.titulo-principal{
+  font-size: 35px; /* Tamaño del texto más grande */
+  text-align: center; /* Centrado horizontal */
+  margin: 50px;
+  font-family: 'Roboto', sans-serif; /* Fuente atractiva (sustituye 'Roboto' por la fuente que desees utilizar) */
+  font-weight: bold; /* Estilo de fuente en negrita */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+  color: #333; /* Color de texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto para resaltar */
+}
+
+/* Estilos para el mensaje de bienvenida */
+.mensaje-bienvenida {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.mensaje-bienvenida p {
+  font-size: 1.5rem; /* Tamaño más pequeño para dar contexto */
+  color: #666; /* Color del texto */
+  margin-top: 20px; /* Espacio entre el título y el texto */
+}
+
+.container-texto {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.welcome-message {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.company-description {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.company-logo {
+  display: block; /* Asegura que la imagen sea un bloque y no se superponga con el texto */
+  margin-top: 20px; /* Ajusta según tu preferencia */
+  width: 400px;
+  float: right;
+  justify-content: center;
+}
+
+.difuminado{
+  padding:20px;
+  background-image: linear-gradient(180deg,#ffffff 0%,#e8eefc 100%);
+}
+.producto{
+  margin: 20px;
+  margin-left: 60px;
+  margin-right:60px;
+  padding: 20px;
+  text-align:center;
+  font-family: 'Lato',Helvetica,Arial,Lucida,sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.5em;
+}
+
+.card-container {
+text-align: center; /* Centrar contenido horizontalmente */
+}
+
+.card {
+position: relative;
+width: 300px;
+height: 200px;
+background-color: #f2f2f2;
+border-radius: 10px;
+display: inline-block; /* Cambiado de flex a inline-block */
+margin-right: 10px; /* Espacio entre las cartas */
+overflow: hidden;
+perspective: 1000px;
+transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+transform: scale(1.03);
+}
+
+.card__content {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+padding: 20px;
+box-sizing: border-box;
+background-color: #f2f2f2;
+transform: rotateX(-90deg);
+transform-origin: bottom;
+transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+transform: rotateX(0deg);
+}
+
+.card__title {
+margin: 0;
+font-size: 24px;
+color: #333;
+font-weight: 700;
+}
+
+
+.card__description {
+margin: 10px 0 0;
+font-size: 14px;
+color: #777;
+line-height: 1.4;
+}
+
+.boton-subir{
+  justify-content: center;
+  display: flex;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(181, 160, 255);
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to Top";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  transition: height 0.5s;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-info, .social-media {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.social-media ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.social-media ul li {
+  margin-bottom: 5px;
+}
+
+.social-media ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer.expanded {
+  height: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-right: 150px;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.instagram {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #cc39a4;
+}
+
+.card2 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.facebook {
+  margin-top: 1.5em;
+  margin-left: -.9em;
+  fill: #03A9F4;
+}
+
+.card3 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.whatsapp {
+  margin-top: -.6em;
+  margin-left: 1.2em;
+  fill: #00ff00;
+}
+
+.card4 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+
+.gmail {
+  margin-top: -.9em;
+  margin-left: -1.2em;
+  fill: #f14336;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #1877f2;
+}
+
+.card2:hover .facebook {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #00ff00;
+}
+
+.card3:hover .whatsapp {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #FF0004;
+}
+
+.card4:hover .gmail {
+  fill: white;
+}

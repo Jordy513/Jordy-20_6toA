@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+  <meta charset="UTF-8">
+  <head>
+    <title>Inicio/TICSC</title>
+    <link rel="icon" href="img/impresora.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/impresora.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/Pagina.css">
+    <link rel="stylesheet" href="css/Slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+<body>
+  <header >
+    <nav>
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a  href="#"><button class="animated-button"><svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg><span class="text">I N I C I O</span><span class="circle"></span><svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg></button></a></li>
+          <li><a  href="complementos/productos.html"><button class="animated-button"><svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg><span class="text">P R O D U C T O S </span><span class="circle"></span><svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg></button></a></li>
+          <li><a  href="complementos/contactos.html"><button class="animated-button"><svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg><span class="text">C O N T A C T O</span><span class="circle"></span><svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg></button></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header><br>
+<!--inicio de slider-->
+  <div class="slider">
+    <div class="slide active">
+      <img src="img/reparacion.jpg" alt="">
+      <div class="info">
+        <h2>Reparación de equipos</h2>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="img/impresion.png" alt="">
+      <div class="info">
+        <h2>Impresiones en diferentes tipos de hojas</h2>
+      </div>
+    </div>
+      <div class="slide">
+        <img src="img/compras.jpg" alt="">
+        <div class="info">
+          <h2>Compras en tiendas online</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="img/materiales.jpg" alt="">
+        <div class="info">
+          <h2>Venta de materiales escolares</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="img/digitacion.jpg" alt="">
+        <div class="info">
+          <h2>Digitación de documentos</h2>
+        </div>
+      </div>
+      <div class="navigation2">
+        <i class="fas fa-chevron-left prev-btn"></i>
+        <i class="fas fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
+  </div>
+    
+    <script type="text/javascript">
+      const slider = document.querySelector(".slider");
+      const nextBtn = document.querySelector(".next-btn");
+      const prevBtn = document.querySelector(".prev-btn");
+      const slides = document.querySelectorAll(".slide");
+      const slideIcons = document.querySelectorAll(".slide-icon");
+      const numberOfSlides = slides.length;
+      var slideNumber = 0;
+
+    //image slider next button
+    nextBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber++;
+
+      if(slideNumber > (numberOfSlides - 1)){
+        slideNumber = 0;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider previous button
+    prevBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber--;
+
+      if(slideNumber < 0){
+        slideNumber = numberOfSlides - 1;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider autoplay
+    var playSlider;
+
+    var repeater = () => {
+      playSlider = setInterval(function(){
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slideIcons.forEach((slideIcon) => {
+          slideIcon.classList.remove("active");
+        });
+
+        slideNumber++;
+
+        if(slideNumber > (numberOfSlides - 1)){
+          slideNumber = 0;
+        }
+
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+      }, 4000);
+    }
+    repeater();
+
+    //stop the image slider autoplay on mouseover
+    slider.addEventListener("mouseover", () => {
+      clearInterval(playSlider);
+    });
+
+    //start the image slider autoplay again on mouseout
+    slider.addEventListener("mouseout", () => {
+      repeater();
+    });
+    </script>
+     
+    <!--fin de slide-->
+    <div class="difuminado">
+    <div class="mi-contenido">
+      <h1 class="titulo-principal">Desde papel hasta dispositivos electrónicos: Todo lo que necesitas, aquí en TIC Service Center</h1>
+    </div>
+    <div class="mensaje-bienvenida">
+      <p>Explora nuestra variedad de productos y servicios para tus necesidades de papelería y tecnología.</p>
+    </div><br><br><br>
+    <div class="container-texto">
+      <h1 class="welcome-message">¡Bienvenido a TIC Service Center!</h1>
+      <div class="content">
+        <img src="img/compras.jpg"  class="company-logo">
+          <p class="company-description">
+              En TIC Service Center nos dedicamos a ofrecer soluciones integrales para todas tus necesidades de papelería y tecnología. Nos enorgullece destacar por nuestro compromiso con la calidad, la innovación y la satisfacción del cliente.
+
+              Nuestro equipo está formado por profesionales apasionados y expertos en el campo, listos para ayudarte a encontrar las mejores soluciones para tus proyectos, ya sea que necesites suministros de papelería de alta calidad, reparación de equipos electrónicos o asesoramiento tecnológico.
+
+              En TIC Service Center, no solo nos esforzamos por satisfacer tus necesidades, sino que también nos comprometemos a superar tus expectativas en cada interacción. Creemos en establecer relaciones sólidas y duraderas con nuestros clientes, basadas en la confianza, la transparencia y la excelencia en el servicio.
+
+              Descubre cómo podemos facilitar tu vida diaria con nuestra amplia gama de productos y servicios, respaldados por años de experiencia y un enfoque centrado en el cliente. ¡Te damos la bienvenida a la experiencia TIC Service Center!
+          </p>
+      </div>
+  </div>
+</div>
+<div class="difuminado">
+  <h1 class="producto">Productos Destacados</h1>
+  <div class="card-container">
+    <div class="card">
+      <img src="img/card1.png">
+      <div class="card__content">
+        <p class="card__title">Impresiones</p>
+        <p class="card__description">Descubre nuestras impresiones de calidad superior. Desde documentos importantes hasta presentaciones impactantes, en TIC Service Center tenemos todo lo que necesitas para hacer brillar tus proyectos.</p>
+      </div>
+    </div>  
+    <div class="card">
+      <img src="img/card2.jpg">
+      <div class="card__content">
+        <p class="card__title">Compras en linea</p>
+        <p class="card__description">En TIC Service Center, te ofrecemos un servicio de compras en línea. Confía en nosotros para hacer tus compras en plataformas como Amazon, eBay y más. </p>
+      </div>
+    </div>  
+    <div class="card">
+      <img src="img/card3.jpg">
+      <div class="card__content">
+        <p class="card__title">Reparaciones</p>
+        <p class="card__description">¿Tienes algún dispositivo electrónico averiado? ¡Déjalo en manos de TIC Service Center! Nuestro equipo está listo para diagnosticar y solucionar cualquier problema que tenga tu equipo.</p>
+      </div>
+    </div>  
+  </div>
+</div ><br><br>
+<div class="boton-subir">
+  <a href="#top"> <button class="button"><svg class="svgIcon" viewBox="0 0 384 512"> <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path></svg></button></a>
+</div> <br>
+<footer>
+  <div class="footer-content">
+    <div class="footer-info">
+      <p><b><font size="5">Información de contacto</font></b><br>
+      C/ Hermanas Mirabal, Jarabacoa, RD<br>
+      Teléfono: +1(809)574-7017<br>
+      Email: ticservicecenter@gmail.com</p>
+    </div>
+    <div class="main">
+      <div class="up">
+        <button class="card1">
+          <a href="https://www.instagram.com/" target="_blank">
+          <svg class="instagram" fill-rule="nonzero" height="30px" width="30px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g></svg>
+        </a>
+        </button>
+        <button class="card2">
+          <a href="https://www.facebook.com/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" class="facebook" width="24">
+            <path d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"></path>
+          </svg>
+        </a>
+        </button>
+      </div>
+      <div class="down">
+        <button class="card3">
+          <a href="https://api.whatsapp.com/send/?phone=%2B18095747017&text=%C2%A1Hola%21+me+interesa+uno+de+sus+servicios&type=phone_number&app_absent=0" target="_blank">
+          <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="whatsapp">
+            <path d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z"></path>
+          </svg>
+        </a>
+        </button>
+        <button onclick="window.location.href='mailto:ticservicecenter@gmail.com'" class="card4" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" class="gmail" width="24">
+            <path d="M6 12C6 15.3137 8.68629 18 12 18C14.6124 18 16.8349 16.3304 17.6586 14H12V10H21.8047V14H21.8C20.8734 18.5645 16.8379 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C15.445 2 18.4831 3.742 20.2815 6.39318L17.0039 8.68815C15.9296 7.06812 14.0895 6 12 6C8.68629 6 6 8.68629 6 12Z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+    
+</footer>
+  </body>
+</html>
